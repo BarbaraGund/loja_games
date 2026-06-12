@@ -1,0 +1,351 @@
+/* --- Configurações Globais --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garante que padding e bordas não aumentem o tamanho total do elemento */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #eef2f5;
+  color: #333;
+  display: flex;
+  flex-direction: column; /* Alinha o conteúdo principal e o rodapé verticalmente */
+  align-items: center; /* Centraliza a estrutura principal no meio da tela */
+}
+
+/* Container que limita a largura do layout em telas grandes */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 20px;
+}
+
+/* --- Header / Cabeçalho --- */
+header {
+  width: 100%;
+  background-color: #0046be;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+header .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 20px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.search-bar {
+  flex: 1; /* Faz a barra expandir para ocupar o espaço disponível */
+  max-width: 500px; /* Impede que ela fique excessivamente larga */
+  margin: 0 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.action-btn {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex; /* Adicionado para alinhar o ícone interno */
+  align-items: center; /* Centraliza verticalmente o ícone */
+  justify-content: center; /* Centraliza horizontalmente o ícone */
+  transition: background 0.2s;
+}
+
+.action-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Estilo para ajustar as imagens internas das mídias/carrinho */
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* --- Banner Principal (Destaques/Slide) --- */
+.hero-section {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide a tela perfeitamente em duas metades */
+  gap: 20px;
+}
+
+.hero-banner {
+  height: 280px;
+  background: linear-gradient(135deg, #111111 0%, #b8860b 100%);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* --- Categorias --- */
+.categories-section {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.category-item {
+  min-width: 75px;
+  height: 75px;
+  background-color: #0056e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.category-item:hover {
+  transform: scale(1.08);
+}
+
+/* --- Espaço de Anúncio --- */
+.ad-space {
+  margin-top: 25px;
+  width: 100%;
+  /* Removemos a altura de 45px antiga para o banner não ficar esmagado */
+  max-height: 180px;
+  border-radius: 12px; /* Mantém os cantos arredondados combinando com o layout */
+  overflow: hidden; /* Garante que os cantos da imagem também fiquem arredondados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Um leve sombreado para dar destaque */
+}
+
+/* Nova regra para controlar o comportamento da imagem do anúncio */
+.ad-space img {
+  width: 100%; /* Força a imagem a ocupar 100% da largura do container */
+  height: 100%; /* Força a imagem a ocupar a altura do container */
+  object-fit: cover; /* Adapta a imagem ao espaço sem distorcê-la ou esticá-la */
+  display: block; /* Remove pequenos espaços em branco indesejados abaixo da imagem */
+}
+
+/* --- Grid de Jogos --- */
+.games-grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Organiza em 6 colunas fixas */
+  gap: 20px;
+}
+
+.game-card {
+  background-color: white;
+  min-height: 180px; /* Garante tamanho inicial mínimo, mas cresce se necessário */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column; /* Empilha verticalmente: foto por cima, texto por baixo */
+  align-items: center;
+  justify-content: space-between; /* Distribui espaços de modo que o texto fique bem na base */
+  padding: 12px;
+  box-sizing: border-box;
+  font-weight: 600;
+  color: #666;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Estilização da imagem interna do jogo */
+.game-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover; /* Recorta a imagem para preencher o espaço mantendo a proporção */
+  border-radius: 8px;
+}
+
+/* Estilização do título do jogo */
+.game-title {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* --- Cards de Informações/Benefícios --- */
+.info-section {
+  margin-top: 35px;
+  display: grid;
+  /* Garante EXATAMENTE 3 colunas, dividindo igualmente o espaço (uma ao lado da outra) */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.info-card {
+  height: 70px;
+  background: linear-gradient(90deg, #050515 0%, #1a1a60 100%);
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  text-align: center;
+  font-size: 13px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Barra de Cadastro de Cliente (Newsletter Reestruturada) --- */
+.newsletter-bar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.newsletter-bar {
+  /* Usamos margem negativa para fazer a barra flutuar sobre o rodapé azul */
+  margin-bottom: -35px;
+  z-index: 10; /* Garante que a barra fique por cima do fundo azul */
+  width: 100%;
+  max-width: 1240px; /* Alinha com os limites das seções de cima */
+  background-color: white;
+  padding: 20px 40px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.newsletter-title {
+  font-weight: bold;
+  color: #0046be;
+  font-size: 16px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 15px;
+  flex: 1;
+  justify-content: flex-end;
+  max-width: 70%;
+}
+
+.newsletter-form input {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  width: 220px;
+  font-size: 14px;
+}
+
+.newsletter-form button {
+  background-color: #00a2ff;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.newsletter-form button:hover {
+  background-color: #0082cc;
+}
+
+/* --- Rodapé (Footer Organizado e Centralizado) --- */
+footer {
+  width: 100%;
+  background-color: #0046be;
+  color: white;
+  /* Aumentamos o espaçamento superior para compensar a barra flutuante */
+  padding: 80px 0 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column; /* Mudado para coluna para alinhar os links e a logo no centro vertical */
+  align-items: center; /* Centraliza tudo horizontalmente no meio da página */
+  gap: 25px; /* Espaçamento perfeito entre a linha de links e a logo */
+}
+
+.footer-links {
+  display: flex;
+  gap: 40px;
+  justify-content: center; /* Centraliza a linha de links */
+}
+
+.footer-links span {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.footer-links span:hover {
+  opacity: 1;
+}
+
+/* Caixa do Logo centralizado */
+.footer-logo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ajuste fino na imagem do logotipo para o rodapé */
+.footer-logo {
+  width: 55px;
+  height: 55px;
+  background-color: white;
+  border-radius: 50%;
+  object-fit: contain;
+  padding: 5px;
+}
