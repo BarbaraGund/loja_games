@@ -3,41 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Store Layout - Desktop</title>
+    <title>Vortex Gaming - Store</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- CABEÇALHO DO SITE -->
     <header>
       <div class="nav-container">
-        <div class="logo">
-          <img src="imagens/logo.png" alt="Logotipo Gameplay+" class="logo" />
+        <!-- LOGO E NOME DA MARCA -->
+        <div class="logo-box">
+          <img
+            src="imagens/logo.png"
+            alt="Logotipo Vortex Gaming"
+            class="logo"
+          />
+          <span class="brand-name"
+            >Vortex <span class="brand-accent">Gaming</span></span
+          >
         </div>
 
+        <!-- BARRA DE PESQUISA -->
         <div class="search-bar">
-          <input type="text" placeholder="Barra de pesquisa..." />
+          <input type="text" placeholder="&#128269; Barra de pesquisa..." />
         </div>
 
+        <!-- ÍCONES DE REDES SOCIAIS, ACESSIBILIDADE E CARRINHO -->
         <div class="header-actions">
           <div class="action-btn">
             <img
-              src="/imagens/acessibilidade.png"
+              src="imagens/acessibilidade.png"
               alt="Acessibilidade"
               class="btn-icon"
             />
           </div>
           <div class="action-btn">
-            <img src="/imagens/facebook.png" alt="Facebook" class="btn-icon" />
+            <img src="imagens/facebook.png" alt="Facebook" class="btn-icon" />
+          </div>
+          <div class="action-btn">
+            <img src="imagens/instagram.png" alt="Instagram" class="btn-icon" />
           </div>
           <div class="action-btn">
             <img
-              src="/imagens/instagram.png"
-              alt="Instagram"
-              class="btn-icon"
-            />
-          </div>
-          <div class="action-btn">
-            <img
-              src="/imagens/carrinho.png"
+              src="imagens/carrinho.png"
               alt="Carrinho de compras"
               class="btn-icon"
             />
@@ -46,15 +53,33 @@
       </div>
     </header>
 
+    <!-- CONTEÚDO PRINCIPAL -->
     <div class="container">
+      <!-- SEÇÃO DE CARROSSEL/BANNERS -->
       <section class="hero-section">
+        <!-- SETA -->
+        <span class="slide-arrow prev">&#10094;</span>
         <div class="hero-banner">
-          Slide com Imagem: Impulsionamento de vendas, informações sobre Jogos e
-          promoções
+          <img
+            src="imagens/frete.png"
+            alt="Slide Impulsionamento e Promoções"
+            class="slide-img-placeholder"
+          />
         </div>
-        <div class="hero-banner">Destaques e Novidades</div>
+
+        <div class="hero-banner">
+          <img
+            src="imagens/promocao.png"
+            alt="Slide Destaques e Novidades"
+            class="slide-img-placeholder"
+          />
+        </div>
+
+        <!-- SETA -->
+        <span class="slide-arrow next">&#10095;</span>
       </section>
 
+      <!-- CATEGORIAS DE JOGOS -->
       <section class="categories-section">
         <div class="category-item">Ação</div>
         <div class="category-item">Aventura</div>
@@ -66,94 +91,385 @@
         <div class="category-item">Terror</div>
       </section>
 
+      <!-- ESPAÇO PUBLICITÁRIO -->
       <div class="ad-space">
-        <img src="imagens/anuncio2.png" alt="Anúncio GAMEPLAY+" />
+        <img src="imagens/anuncio2.png" alt="Anúncio Vortex Gaming" />
       </div>
 
+      <!-- GRADE DE JOGOS (12 JOGOS) -->
       <section class="games-grid">
+        <!-- JOGO 1 -->
         <div class="game-card">
-          <img src="/imagens/jogo1.png" alt="Jogo 1" class="game-image" />
-          <p class="game-title">Título do Jogo 1</p>
+          <div class="card-header">
+            <span class="rating">★ 5.0</span>
+            <div class="card-actions">
+              <button class="action-btn">♥</button>
+              <button class="action-btn">🛒</button>
+            </div>
+          </div>
+
+          <div class="image-container">
+            <img
+              src="imagens/jogo1.png"
+              alt="God of War Ragnarök"
+              class="game-image"
+            />
+          </div>
+
+          <p class="game-title">
+            Jogo God of War Ragnarök, Edição Standard, PS5
+          </p>
+
+          <div class="price-container">
+            <p class="main-price">R$ 384,00</p>
+            <p class="payment-details">No PIX ou 10x de R$ 41,28</p>
+          </div>
         </div>
+        <!-- JOGO 2 -->
         <div class="game-card">
-          <img src="/imagens/jogo2.png" alt="Jogo 2" class="game-image" />
-          <p class="game-title">Título do Jogo 2</p>
+          <div class="card-header">
+            <span class="rating">★ 5.0</span>
+            <div class="card-actions">
+              <button class="action-btn">♥</button>
+              <button class="action-btn">🛒</button>
+            </div>
+          </div>
+
+          <div class="image-container">
+            <img
+              src="imagens/jogo2.png"
+              alt="Marvels Spider-Man 2"
+              class="game-image"
+            />
+          </div>
+
+          <p class="game-title">
+            Jogo Marvels Spider-Man 2 Standard Edition, Playstation 5
+          </p>
+
+          <div class="price-container">
+            <p class="main-price">R$ 189,00</p>
+            <p class="payment-details">No PIX ou 10x de R$ 26,25</p>
+          </div>
         </div>
+        <!-- JOGO 3 -->
         <div class="game-card">
-          <img src="/imagens/jogo3.png" alt="Jogo 3" class="game-image" />
-          <p class="game-title">Título do Jogo 3</p>
+          <div class="card-header">
+            <span class="rating">★ 5.0</span>
+            <div class="card-actions">
+              <button class="action-btn">♥</button>
+              <button class="action-btn">🛒</button>
+            </div>
+          </div>
+
+          <div class="image-container">
+            <img
+              src="imagens/jogo3.png"
+              alt="EA Sports FC 26"
+              class="game-image"
+            />
+          </div>
+
+          <p class="game-title">Jogo EA Sports FC 26, PS5 - EA000011PS5</p>
+
+          <div class="price-container">
+            <p class="main-price">R$ 350,00</p>
+            <p class="payment-details">No PIX ou 10x de R$ 37,90</p>
+          </div>
         </div>
+        <!-- JOGO 4 -->
         <div class="game-card">
-          <img src="/imagens/jogo4.png" alt="Jogo 4" class="game-image" />
-          <p class="game-title">Título do Jogo 4</p>
+          <div class="card-header">
+            <span class="rating">★ 5.0</span>
+            <div class="card-actions">
+              <button class="action-btn">♥</button>
+              <button class="action-btn">🛒</button>
+            </div>
+          </div>
+
+          <div class="image-container">
+            <img
+              src="imagens/jogo4.png"
+              alt="The Last of Us, Parte 1"
+              class="game-image"
+            />
+          </div>
+
+          <p class="game-title">Jogo The Last of US, Parte 1, PS5</p>
+
+          <div class="price-container">
+            <p class="main-price">R$ 269,90</p>
+            <p class="payment-details">No PIX ou 10x de R$ 29,02</p>
+          </div>
         </div>
+        <!-- JOGO 5 -->
         <div class="game-card">
-          <img src="/imagens/jogo5.png" alt="Jogo 5" class="game-image" />
-          <p class="game-title">Título do Jogo 5</p>
+          <div class="card-header">
+            <span class="rating">★ 5.0</span>
+            <div class="card-actions">
+              <button class="action-btn">♥</button>
+              <button class="action-btn">🛒</button>
+            </div>
+          </div>
+
+          <div class="image-container">
+            <img
+              src="imagens/jogo5.png"
+              alt="Horizon Zero Dawn Remastered"
+              class="game-image"
+            />
+          </div>
+
+          <p class="game-title">Jogo Horizon Zero Dawn Remastered, PS5</p>
+
+          <div class="price-container">
+            <p class="main-price">R$ 205,90</p>
+            <p class="payment-details">No PIX ou 10x de R$ 27,67</p>
+          </div>
         </div>
+        <!-- JOGO 6 -->
         <div class="game-card">
-          <img src="/imagens/jogo6.png" alt="Jogo 6" class="game-image" />
-          <p class="game-title">Título do Jogo 6</p>
+          <div class="card-header">
+            <span class="rating">★ 5.0</span>
+            <div class="card-actions">
+              <button class="action-btn">♥</button>
+              <button class="action-btn">🛒</button>
+            </div>
+          </div>
+
+          <div class="image-container">
+            <img
+              src="imagens/jogo6.png"
+              alt="Death Stranding: Versão do Diretor"
+              class="game-image"
+            />
+          </div>
+
+          <p class="game-title">Jogo Death Stranding: Versão do Diretor, PS5</p>
+
+          <div class="price-container">
+            <p class="main-price">R$ 195,90</p>
+            <p class="payment-details">No PIX ou 10x de R$ 20,90</p>
+          </div>
         </div>
+        <!-- JOGO 7 -->
         <div class="game-card">
-          <img src="/imagens/jogo7.png" alt="Jogo 7" class="game-image" />
-          <p class="game-title">Título do Jogo 7</p>
+          <div class="card-header">
+            <span class="rating">★ 5.0</span>
+            <div class="card-actions">
+              <button class="action-btn">♥</button>
+              <button class="action-btn">🛒</button>
+            </div>
+          </div>
+
+          <div class="image-container">
+            <img
+              src="imagens/jogo7.png"
+              alt="Uncharted: Coleção Legado dos Ladrões"
+              class="game-image"
+            />
+          </div>
+
+          <p class="game-title">
+            Jogo Uncharted: Coleção Legado dos Ladrões, PS5
+          </p>
+
+          <div class="price-container">
+            <p class="main-price">R$ 268,76</p>
+            <p class="payment-details">No PIX ou 10x de R$ 29,02</p>
+          </div>
         </div>
+        <!-- JOGO 8 -->
         <div class="game-card">
-          <img src="/imagens/jogo8.png" alt="Jogo 8" class="game-image" />
-          <p class="game-title">Título do Jogo 8</p>
+          <div class="card-header">
+            <span class="rating">★ 5.0</span>
+            <div class="card-actions">
+              <button class="action-btn">♥</button>
+              <button class="action-btn">🛒</button>
+            </div>
+          </div>
+
+          <div class="image-container">
+            <img
+              src="imagens/jogo8.png"
+              alt="Sackboy: A Big Adventure for PlayStation 5"
+              class="game-image"
+            />
+          </div>
+
+          <p class="game-title">
+            Jogo Sackboy Uma Grande Aventura Para Playstation 5 Sumo
+          </p>
+
+          <div class="price-container">
+            <p class="main-price">R$ 129,00</p>
+            <p class="payment-details">No PIX ou 10x de R$ 13,90</p>
+          </div>
         </div>
+        <!-- JOGO 9 -->
         <div class="game-card">
-          <img src="/imagens/jogo9.png" alt="Jogo 9" class="game-image" />
-          <p class="game-title">Título do Jogo 9</p>
+          <div class="card-header">
+            <span class="rating">★ 5.0</span>
+            <div class="card-actions">
+              <button class="action-btn">♥</button>
+              <button class="action-btn">🛒</button>
+            </div>
+          </div>
+
+          <div class="image-container">
+            <img
+              src="imagens/jogo9.png"
+              alt="Battlefield 6 PS5"
+              class="game-image"
+            />
+          </div>
+
+          <p class="game-title">Jogo Battlefield 6 PS5</p>
+
+          <div class="price-container">
+            <p class="main-price">R$ 289,90</p>
+            <p class="payment-details">No PIX ou 10x de R$ 32,21</p>
+          </div>
         </div>
+        <!-- JOGO 10 -->
         <div class="game-card">
-          <img src="/imagens/jogo10.png" alt="Jogo 10" class="game-image" />
-          <p class="game-title">Título do Jogo 10</p>
+          <div class="card-header">
+            <span class="rating">★ 5.0</span>
+            <div class="card-actions">
+              <button class="action-btn">♥</button>
+              <button class="action-btn">🛒</button>
+            </div>
+          </div>
+
+          <div class="image-container">
+            <img
+              src="imagens/jogo10.png"
+              alt="Ghost of Yõtei"
+              class="game-image"
+            />
+          </div>
+
+          <p class="game-title">Jogo Ghost of Yõtei, PS5</p>
+
+          <div class="price-container">
+            <p class="main-price">R$ 371,07</p>
+            <p class="payment-details">No PIX ou 10x de R$ 39,90</p>
+          </div>
         </div>
+        <!-- JOGO 11 -->
         <div class="game-card">
-          <img src="/imagens/jogo11.png" alt="Jogo 11" class="game-image" />
-          <p class="game-title">Título do Jogo 11</p>
+          <div class="card-header">
+            <span class="rating">★ 5.0</span>
+            <div class="card-actions">
+              <button class="action-btn">♥</button>
+              <button class="action-btn">🛒</button>
+            </div>
+          </div>
+
+          <div class="image-container">
+            <img
+              src="imagens/jogo11.png"
+              alt="Resident Evil Requiem for PlayStation 5"
+              class="game-image"
+            />
+          </div>
+
+          <p class="game-title">Jogo Resident Evil Requiem, PS5</p>
+
+          <div class="price-container">
+            <p class="main-price">R$ 325,90</p>
+            <p class="payment-details">No PIX ou 10x de R$ 35,90</p>
+          </div>
         </div>
+        <!-- JOGO 12 -->
         <div class="game-card">
-          <img src="/imagens/jogo12.png" alt="Jogo 12" class="game-image" />
-          <p class="game-title">Título do Jogo 12</p>
+          <div class="card-header">
+            <span class="rating">★ 5.0</span>
+            <div class="card-actions">
+              <button class="action-btn">♥</button>
+              <button class="action-btn">🛒</button>
+            </div>
+          </div>
+
+          <div class="image-container">
+            <img
+              src="imagens/jogo12.png"
+              alt="SAROS Edição Standard"
+              class="game-image"
+            />
+          </div>
+
+          <p class="game-title">Jogo SAROS Edição Standard, para PS5</p>
+
+          <div class="price-container">
+            <p class="main-price">R$ 315,90</p>
+            <p class="payment-details">No PIX ou 10x de R$ 33,96</p>
+          </div>
         </div>
       </section>
 
+      <!-- SEÇÃO DE INFORMAÇÕES ADICIONAIS -->
       <section class="info-section">
         <div class="info-card">
-          Informações sobre a loja. Benefícios de serem clientes.
+          <img
+            src="imagens/beneficios.png"
+            alt="Informações sobre a loja e Benefícios"
+            class="info-card-img"
+          />
         </div>
         <div class="info-card">
-          Planos de Assinaturas e Clubes de Benefícios
+          <img
+            src="imagens/cadastro.png"
+            alt="Planos de Assinaturas"
+            class="info-card-img"
+          />
         </div>
-        <div class="info-card">Suporte ao Cliente e Termos de Uso</div>
+        <div class="info-card">
+          <img
+            src="imagens/suporte.png"
+            alt="Suporte ao Cliente e Termos"
+            class="info-card-img"
+          />
+        </div>
       </section>
     </div>
 
+    <!-- RODAPÉ -->
     <footer>
-      <section class="newsletter-bar-container">
-      <div class="newsletter-bar">
-        <div class="newsletter-title">Cadastro cliente</div>
-        <div class="newsletter-form">
-          <input type="text" placeholder="Nome" />
-          <input type="email" placeholder="Email" />
-          <button type="button">Cadastrar</button>
+      <div class="footer-container">
+        <!-- FORMULÁRIO DE CADASTRO -->
+        <div class="footer-newsletter">
+          <h3 class="newsletter-title">Cadastro cliente</h3>
+          <form class="newsletter-form">
+            <input type="text" placeholder="Nome" required />
+            <input type="email" placeholder="Email" required />
+            <button type="submit">Cadastrar</button>
+          </form>
         </div>
-      </div>
-    </section>
 
-    <footer>
-      <div class="footer-content">
-        <div class="footer-links">
-          <span>Sobre nós</span>
-          <span>Políticas</span>
-          <span>Contato</span>
-        </div>
-        
-        <div class="footer-logo-box">
-          <img src="imagens/logo.png" alt="Logotipo Gameplay+" class="footer-logo" />
+        <!-- LINHA DIVISÓRIA -->
+        <hr class="footer-divider" />
+
+        <!-- PARTE INFERIOR DO RODAPÉ -->
+        <div class="footer-bottom">
+          <!-- LINKS -->
+          <nav class="footer-links">
+            <a href="#">Sobre nós</a>
+            <a href="#">Políticas</a>
+            <a href="contato.html">Contato</a>
+          </nav>
+
+          <!-- LOGO RODAPÉ -->
+          <div class="footer-logo-box">
+            <img
+              src="imagens/logo.png"
+              alt="Logotipo Vortex Gaming"
+              class="footer-logo"
+            />
+            <span class="brand-name"
+              >Vortex <span class="brand-accent">Gaming</span></span
+            >
+          </div>
         </div>
       </div>
     </footer>

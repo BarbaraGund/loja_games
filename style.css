@@ -1,8 +1,11 @@
-/* --- Configurações Globais --- */
+/* ===================================
+   1. CONFIGURAÇÕES GERAIS
+   =================================== */
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Garante que padding e bordas não aumentem o tamanho total do elemento */
+  box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -10,18 +13,41 @@ body {
   background-color: #eef2f5;
   color: #333;
   display: flex;
-  flex-direction: column; /* Alinha o conteúdo principal e o rodapé verticalmente */
-  align-items: center; /* Centraliza a estrutura principal no meio da tela */
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Container que limita a largura do layout em telas grandes */
 .container {
   width: 100%;
   max-width: 1280px;
   padding: 0 20px;
 }
 
-/* --- Header / Cabeçalho --- */
+/* ===========================================
+   2. ARTE DA LOGO (VORTEX GAMING)
+   =========================================== */
+.logo-box,
+.footer-logo-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.brand-accent {
+  color: #00a2ff;
+}
+
+/* ============================
+   3. HEADER / CABEÇALHO 
+   ============================ */
 header {
   width: 100%;
   background-color: #0046be;
@@ -39,6 +65,14 @@ header .nav-container {
   width: 100%;
   max-width: 1280px;
   padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.logo-box {
+  order: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo {
@@ -49,9 +83,10 @@ header .nav-container {
 }
 
 .search-bar {
-  flex: 1; /* Faz a barra expandir para ocupar o espaço disponível */
-  max-width: 500px; /* Impede que ela fique excessivamente larga */
+  flex: 1;
+  max-width: 500px;
   margin: 0 20px;
+  order: 2;
 }
 
 .search-bar input {
@@ -66,55 +101,131 @@ header .nav-container {
 .header-actions {
   display: flex;
   gap: 12px;
+  order: 3;
 }
 
 .action-btn {
-  width: 35px;
-  height: 35px;
-  background-color: rgba(255, 255, 255, 0.2);
+  width: 25px;
+  height: 25px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /*Fundo branco com 10% de opacidade*/
   border-radius: 8px;
   cursor: pointer;
-  display: flex; /* Adicionado para alinhar o ícone interno */
-  align-items: center; /* Centraliza verticalmente o ícone */
-  justify-content: center; /* Centraliza horizontalmente o ícone */
-  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s; /*Transição suave de 0.2 segundos ao mudar o fundo*/
 }
 
 .action-btn:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.4
+  ); /*Aumenta a opacidade do fundo para 40% no hover*/
 }
 
-/* Estilo para ajustar as imagens internas das mídias/carrinho */
 .btn-icon {
   width: 18px;
   height: 18px;
-  object-fit: contain;
+  object-fit: contain; /*Garante que o ícone mude de escala sem distorcer*/
 }
 
-/* --- Banner Principal (Destaques/Slide) --- */
+.header-info-text {
+  flex: 1 1 100%;
+  order: 4;
+  margin-top: 20px;
+  font-size: 13.5px;
+  color: #e0e6ed;
+  line-height: 1.5;
+}
+
+.header-info-text p {
+  margin: 5px 0;
+}
+
+.header-info-text strong {
+  color: #ffffff;
+}
+
+/* ============================
+   4. SEÇÃO HERO E SLIDES 
+   =========================== */
 .hero-section {
   margin-top: 30px;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Divide a tela perfeitamente em duas metades */
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
+  position: relative;
 }
 
 .hero-banner {
   height: 280px;
-  background: linear-gradient(135deg, #111111 0%, #b8860b 100%);
   border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  padding: 30px;
   text-align: center;
   font-weight: bold;
   font-size: 18px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* --- Categorias --- */
+.slide-img-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /*Desloca a seta para cima em 50% de sua altura*/
+  background-color: #f2efef;
+  color: #0c0c0c;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
+  font-weight: bold;
+  user-select: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.2s,
+    background-color 0.2s; /*Suaviza as animações*/
+}
+
+.slide-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  background-color: #f5f5f5;
+}
+
+.slide-arrow.prev {
+  left: 10px;
+}
+
+.slide-arrow.next {
+  right: 10px;
+}
+
+/* ==========================
+   5. SEÇÃO DE CATEGORIAS
+   ========================== */
 .categories-section {
   margin-top: 30px;
   display: flex;
@@ -144,79 +255,145 @@ header .nav-container {
   transform: scale(1.08);
 }
 
-/* --- Espaço de Anúncio --- */
+/* =========================
+   6. ESPAÇO DE ANÚNCIO
+   ======================== */
 .ad-space {
   margin-top: 25px;
   width: 100%;
-  /* Removemos a altura de 45px antiga para o banner não ficar esmagado */
   max-height: 180px;
-  border-radius: 12px; /* Mantém os cantos arredondados combinando com o layout */
-  overflow: hidden; /* Garante que os cantos da imagem também fiquem arredondados */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Um leve sombreado para dar destaque */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* Nova regra para controlar o comportamento da imagem do anúncio */
 .ad-space img {
-  width: 100%; /* Força a imagem a ocupar 100% da largura do container */
-  height: 100%; /* Força a imagem a ocupar a altura do container */
-  object-fit: cover; /* Adapta a imagem ao espaço sem distorcê-la ou esticá-la */
-  display: block; /* Remove pequenos espaços em branco indesejados abaixo da imagem */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* --- Grid de Jogos --- */
+/* =======================
+   7. GRID DE JOGOS
+   ===================== */
 .games-grid {
   margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* Organiza em 6 colunas fixas */
+  grid-template-columns: repeat(6, 1fr); /* Mantém as 6 colunas originais */
   gap: 20px;
 }
 
 .game-card {
-  background-color: white;
-  min-height: 180px; /* Garante tamanho inicial mínimo, mas cresce se necessário */
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  border-radius: 24px; /* Cantos bem arredondados conforme o print */
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   display: flex;
-  flex-direction: column; /* Empilha verticalmente: foto por cima, texto por baixo */
-  align-items: center;
-  justify-content: space-between; /* Distribui espaços de modo que o texto fique bem na base */
-  padding: 12px;
-  box-sizing: border-box;
-  font-weight: 600;
-  color: #666;
+  flex-direction: column;
+  justify-content: space-between;
   transition:
-    transform 0.2s,
-    box-shadow 0.2s;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   cursor: pointer;
-  border: 2px solid transparent;
+  box-sizing: border-box;
 }
 
 .game-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilização da imagem interna do jogo */
-.game-image {
+/* Topo do Card (Estrela e Ícones de ação interna) */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
   width: 100%;
-  height: 120px;
-  object-fit: cover; /* Recorta a imagem para preencher o espaço mantendo a proporção */
-  border-radius: 8px;
 }
 
-/* Estilização do título do jogo */
-.game-title {
-  margin: 8px 0 0 0;
+.rating {
+  color: #ff6a00; /* Cor laranja idêntica à estrela de avaliação */
+  font-weight: 700;
   font-size: 14px;
-  text-align: center;
 }
 
-/* --- Cards de Informações/Benefícios --- */
+.card-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.card-actions .action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #555e69;
+  padding: 0;
+  width: auto;
+  height: auto;
+}
+
+/* Container para a Capa do Jogo */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.game-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain; /* Exibe a capa inteira sem esticar ou cortar */
+  border-radius: 0;
+}
+
+/* Título do Produto */
+.game-title {
+  color: #1f3344;
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 0 0 20px 0;
+  font-weight: 500;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limita o título em duas linhas para não quebrar a simetria */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Bloco de Preços na Base */
+.price-container {
+  margin-top: auto; /* Trava o bloco de preços no final do card */
+  width: 100%;
+  text-align: left;
+}
+
+.main-price {
+  color: #1f3344;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.payment-details {
+  color: #7f8c99;
+  font-size: 13px;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* ============================
+   8. CARDS DE INFORMAÇÕES
+   ===========================*/
 .info-section {
   margin-top: 35px;
   display: grid;
-  /* Garante EXATAMENTE 3 colunas, dividindo igualmente o espaço (uma ao lado da outra) */
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* Organiza o layout em 3 colunas */
   gap: 25px;
 }
 
@@ -228,124 +405,392 @@ header .nav-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px;
   text-align: center;
   font-size: 13px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 }
 
-/* --- Barra de Cadastro de Cliente (Newsletter Reestruturada) --- */
-.newsletter-bar-container {
+.info-card-img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ======================================
+   9. NEWSLETTER (BARRA DE CADASTRO)
+   ===================================== */
+.footer-newsletter {
   display: flex;
   justify-content: center;
-  padding: 0 20px;
-}
-
-.newsletter-bar {
-  /* Usamos margem negativa para fazer a barra flutuar sobre o rodapé azul */
-  margin-bottom: -35px;
-  z-index: 10; /* Garante que a barra fique por cima do fundo azul */
-  width: 100%;
-  max-width: 1240px; /* Alinha com os limites das seções de cima */
-  background-color: white;
-  padding: 20px 40px;
-  border-radius: 30px;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .newsletter-title {
+  font-size: 18px;
   font-weight: bold;
-  color: #0046be;
-  font-size: 16px;
+  color: #ffffff;
 }
 
 .newsletter-form {
   display: flex;
   gap: 15px;
-  flex: 1;
-  justify-content: flex-end;
-  max-width: 70%;
 }
 
 .newsletter-form input {
-  padding: 10px 20px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
   outline: none;
-  width: 220px;
+  width: 240px;
   font-size: 14px;
+  background-color: white;
+  color: #333;
 }
 
 .newsletter-form button {
   background-color: #00a2ff;
   color: white;
   border: none;
-  padding: 10px 30px;
-  border-radius: 20px;
+  padding: 12px 30px;
+  border-radius: 25px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.2s;
+  transition:
+    background 0.2s,
+    transform 0.1s;
 }
 
 .newsletter-form button:hover {
   background-color: #0082cc;
+  transform: scale(1.02);
 }
 
-/* --- Rodapé (Footer Organizado e Centralizado) --- */
+/* ===========================================
+   10. RODAPÉ (FOOTER - LINKS E LOGOTIPO)
+   ========================================== */
 footer {
   width: 100%;
   background-color: #0046be;
   color: white;
-  /* Aumentamos o espaçamento superior para compensar a barra flutuante */
-  padding: 80px 0 30px 0;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1240px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-divider {
+  border: 0;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  width: 100%;
+}
+
+.footer-bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.footer-content {
+  justify-content: center;
   width: 100%;
-  max-width: 1280px;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column; /* Mudado para coluna para alinhar os links e a logo no centro vertical */
-  align-items: center; /* Centraliza tudo horizontalmente no meio da página */
-  gap: 25px; /* Espaçamento perfeito entre a linha de links e a logo */
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .footer-links {
   display: flex;
-  gap: 40px;
-  justify-content: center; /* Centraliza a linha de links */
+  gap: 30px;
+  order: 1; /* Mantém links abaixo da logo no fluxo móvel/alinhado */
 }
 
-.footer-links span {
-  cursor: pointer;
-  opacity: 0.8;
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  opacity: 0.85;
   transition: opacity 0.2s;
+  font-weight: 500;
 }
 
-.footer-links span:hover {
+.footer-links a:hover {
   opacity: 1;
 }
 
-/* Caixa do Logo centralizado */
 .footer-logo-box {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 12px;
+  order: 2;
 }
 
-/* Ajuste fino na imagem do logotipo para o rodapé */
 .footer-logo {
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
   background-color: white;
   border-radius: 50%;
   object-fit: contain;
-  padding: 5px;
+  padding: 4px;
+}
+
+/* ================================================
+   11. PÁGINA DE CONTATO E ELEMENTOS ADICIONAIS
+   =============================================== */
+.contact-main-title {
+  text-align: center;
+  color: #0046be;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.contact-search-wrapper {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.contact-search-input {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.contact-search-btn {
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  padding: 0 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.faq-main-heading {
+  max-width: 1000px;
+  margin: 0 auto 15px auto;
+  font-size: 16px;
+  color: #0046be;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto 50px auto;
+}
+
+.faq-box {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 18px 20px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.faq-box:hover {
+  background-color: #ede6e6;
+}
+
+.faq-arrow {
+  color: #8b0000;
+  font-size: 16px;
+  margin-left: 15px;
+}
+
+.contact-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
+
+.method-card {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  padding: 40px 20px 30px 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 220px;
+}
+
+.card-icon-badge {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #8b0000;
+  color: rgb(255, 255, 255);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 10px #5b0101;
+}
+
+.method-card-title {
+  color: #0046be;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.status-online {
+  font-size: 13px;
+  color: #28a745;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 auto 20px auto;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #28a745;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-neutral {
+  font-size: 13px;
+  color: #0046be;
+  font-weight: 500;
+  margin: 0 auto 20px auto;
+}
+
+.phone-display-number {
+  color: #8b0000;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: auto;
+  margin-bottom: 5px;
+}
+
+.method-action-btn {
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+  margin-top: auto;
+}
+
+.method-action-btn:hover {
+  background-color: #b30000;
+}
+
+.btn-arrow {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+/* ==============================================
+   12. RESPONSIVIDADE COMPLETA
+   ============================================= */
+@media (max-width: 1024px) {
+  .games-grid {
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); /* Reduz de 6 para 4 colunas em tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  header .nav-container {
+    flex-direction: column; /* Empilha tudo verticalmente no mobile */
+    gap: 15px;
+    text-align: center;
+  }
+
+  .logo-box {
+    order: 1;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin: 10px 0;
+    order: 2;
+  }
+
+  .header-actions {
+    order: 3;
+  }
+
+  .header-info-text {
+    order: 4;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr; /* Hero vira 1 única coluna */
+    padding: 0 20px;
+  }
+
+  .slide-arrow.prev {
+    left: 25px;
+  }
+  .slide-arrow.next {
+    right: 25px;
+  }
+
+  .info-section,
+  .contact-methods-grid {
+    grid-template-columns: 1fr; /* Grids colapsam para 1 coluna */
+  }
+
+  .categories-section {
+    flex-wrap: wrap; /* Categorias quebram linha */
+  }
 }
