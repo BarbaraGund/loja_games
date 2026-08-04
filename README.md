@@ -19,9 +19,9 @@
 
 <div align="center">
   <p><b>1. Tela Inicial</b></p>
-  <img src="./imagens/demonstracao1.png" alt="Preview da Loja Vortex Gaming" width="850" />
+  <img src="./imagens/Demonstracao1.png" alt="Preview da Loja Vortex Gaming" width="850" />
   <br/><br/>
-  <img src="./imagens/demonstracao2.png" alt="Preview da Página de Contato" width="850" />
+  <img src="./imagens/Demonstracao2.png" alt="Preview da Página de Contato" width="850" />
 </div>
 
 
